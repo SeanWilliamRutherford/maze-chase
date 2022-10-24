@@ -1,5 +1,9 @@
 import './App.css';
 import React from "react";
+import ReactDOM from 'react-dom/client';
+import {
+  Link,
+} from "react-router-dom";
 
 import {createMaze} from './Nodes.js';
 
@@ -11,7 +15,7 @@ function euclidianDistance(xStart,yStart,xEnd,yEnd){
 
 export class MyNode {
   hCost;
-  gCost; //If no gCost has been assigned, a new path will always be created
+  gCost; 
   fCost;
   xPos;
   yPos;
@@ -23,7 +27,7 @@ export class MyNode {
     this.yPos = y;
     this.visited = false;
     this.open = false;
-    this.gCost = 9999999;
+    this.gCost = 9999999; //If no gCost has been assigned, a new path will always be created
     this.hCost = 0;
     this.fCost = 0;
     this.parent = null;
@@ -305,11 +309,13 @@ function App() {
   return (
     <div>
       <h1>Maze Runner</h1>
+      
       <button
         className="button button1"
         onClick={startGame}>
         Start  
       </button>
+      
       <canvas
         id="myCanvas"
         width="1000"
@@ -318,6 +324,10 @@ function App() {
         //onKeyDown={handleKeyDown}
       >
       </canvas>
+
+      <li>
+        <Link to={'/'}>Log Out</Link>
+      </li>
     </div>
   );
 }
