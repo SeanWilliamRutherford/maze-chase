@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const {getStats, setStats, updateStats, deleteStats} = require('../controllers/statController');
+const {protect} = require('../middleware/authMiddleware')
 
 
-router.get('/', getStats);
+router.get('/', protect, getStats);
 
-router.post('/', setStats);
+router.post('/', protect, setStats);
 
-router.put('/:id', updateStats);
+router.put('/:id', protect, updateStats);
 
-router.delete('/:id', deleteStats);
+router.delete('/:id', protect, deleteStats);
 
 module.exports = router

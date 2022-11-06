@@ -5,16 +5,25 @@ import {
   RouterProvider,
   Route,
 } from "react-router-dom";
-import './index.css';
-import App from './App';
-import LogInPage from './logInPage';
-import Home from './home';
-import reportWebVitals from './reportWebVitals';
+import { store } from './app/store';
+import { Provider } from 'react-redux';
+
+import './stylesheets/index.css';
+import Play from './pages/Play';
+import Login from './pages/Login';
+import Home from './pages/Home';
+import Register from './pages/Register';
+import reportWebVitals from './extras/reportWebVitals';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LogInPage/>,
+    element: <Login/>,
+  },
+  {
+    path: "/register",
+    element: <Register/>
+
   },
   {
     path: "/main",
@@ -22,7 +31,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/play",
-    element: <App/>
+    element: <Play/>
 
   }
 ]);
@@ -31,7 +40,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   //<React.StrictMode>
     //<App />
-    <RouterProvider router={router} />
+    <Provider store ={store}>
+      <RouterProvider router={router} />
+    </Provider>
   //</React.StrictMode>
 );
 
