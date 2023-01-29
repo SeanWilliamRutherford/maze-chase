@@ -1,6 +1,8 @@
 # Maze Runner
+This is a game created with the MERN stack, implementing react states with redux, 
+and JWT authorization, writing to a Mongo instance with Express.js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
