@@ -58,10 +58,16 @@ canvas {
   width: 800px;
 }
 
-h1 {text-align: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: peachpuff
+h1 {
+  text-align: center;
+  font-family: 'OrbitRacerOrbitRacer';
+  font-size: 86px;
+  font-weight: normal;
+  font-style: normal;
 
+  text-shadow: 2px 2px 3px #f32727e5, 2px 2px 12px #12e149;
+  
+  color: black;
 }
 
 .button {

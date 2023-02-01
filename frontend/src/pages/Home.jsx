@@ -7,6 +7,8 @@ function Home() {
             <h1>Maze Chase</h1>
             <li>
                 <Link to={'/play'}>Start</Link>
+                <Link to={'/multiplayer'}>Start</Link>
+
             </li>
         </div>
     )
