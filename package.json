@@ -31,7 +31,7 @@
     "server": "nodemon backend/server.js --ignore client",
     "client": "npm start --prefix frontend",
     "build": "npm run build --prefix frontend",
-    "frontinstall": "npm run install --prefix frontend",
+    "frontinstall": "npm install --prefix frontend",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
