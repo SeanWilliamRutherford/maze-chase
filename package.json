@@ -22,14 +22,15 @@
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.4.1-pre.0",
     "react-scripts": "5.0.1",
+    "socket.io": "^4.5.4",
     "sort-by": "^1.2.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "server": "nodemon backend/server.js",
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js --ignore client",
     "client": "npm start --prefix frontend",
-    "build": "react-scripts build",
+    "build": "npm run build --prefix frontend",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

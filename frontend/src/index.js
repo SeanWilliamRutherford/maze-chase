@@ -13,6 +13,7 @@ import Play from './pages/Play';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Register from './pages/Register';
+import TwoPlay from './pages/TwoPlay'
 import reportWebVitals from './extras/reportWebVitals';
 
 const router = createBrowserRouter([
@@ -33,7 +34,12 @@ const router = createBrowserRouter([
     path: "/play",
     element: <Play/>
 
+  },
+  {
+    path: "/multiplayer",
+    element: <TwoPlay/>
   }
+
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
