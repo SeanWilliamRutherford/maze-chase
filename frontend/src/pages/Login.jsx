@@ -5,6 +5,7 @@ import {toast} from 'react-toastify'
 import {reset, login} from '../features/auth/authSlice'
 import {FaUser} from 'react-icons/fa'
 import { Link } from "react-router-dom";
+import styles from '../stylesheets/Login.module.css'
 
 
 function Login() {
@@ -61,19 +62,20 @@ function Login() {
    
     return (
         <>
-          <section className='heading'>
-            <h1>
-              <FaUser /> Login
-            </h1>
-            <p>Log in</p>
-          </section>
+        <div className={styles.page}>
+          
     
-          <section className='form'>
+          <div className={styles.loginform}>
+            <div className={styles.title}>
+              <h1>
+                <FaUser /> Login
+              </h1>
+            </div>
             <form onSubmit={onSubmit}>
-              <div className='form-group'>
+              <div className={styles.input}>
                 <input
                   type='email'
-                  className='form-control'
+                  className={styles.input}
                   id='email'
                   name='email'
                   value={email}
@@ -81,10 +83,10 @@ function Login() {
                   onChange={onChange}
                 />
               </div>
-              <div className='form-group'>
+              <div className={styles.input}>
                 <input
                   type='password'
-                  className='form-control'
+                  className={styles.input}
                   id='password'
                   name='password'
                   value={password}
@@ -92,21 +94,17 @@ function Login() {
                   onChange={onChange}
                 />
               </div>
-              <div className='form-group'>
-                <button type='submit' className='btn btn-block'>
+              <div className={styles.buttonplace}>
+                <button type='submit' className={styles.button}>
                   Submit
                 </button>
               </div>
             </form>
-          </section>
-
-          <section>
-            <div>
-                <li>
-                    <Link to={'/register'}>New User? Register for an account!</Link>
-                </li>
-            </div>
-          </section>
+            
+            <Link to={'/register'} className={styles.link}>New User? Register for an account!</Link>
+            
+          </div>
+        </div>
         </>
       )
 }

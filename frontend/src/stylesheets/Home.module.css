@@ -1,0 +1,38 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+    background-color: blueviolet;
+    border-radius: 50px;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:black;
+    gap: 35px
+}
+
+.button{
+    height: 50px;
+    width: 250px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all linear 0.15s;
+}
+
+.button:hover{
+    background-color: rgba(127, 255, 212,0.5);
+}

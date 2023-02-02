@@ -1,15 +1,22 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import styles from "../stylesheets/Home.module.css";
 
 function Home() {
     return (
-        <div>
+        <div className={styles.page}>
             <h1>Maze Chase</h1>
-            <li>
-                <Link to={'/play'}>Start</Link>
-                <Link to={'/multiplayer'}>Start</Link>
+            <div className={styles.options}>
+                <li className={styles.list}>
+                    <Link to={'/play'}>
+                        <button className={styles.button}>Single Player</button>
+                    </Link>
+                                         
+                        <button className={styles.button}>Multiplayer - coming soon</button>
+                    
 
-            </li>
+                </li>
+            </div>
         </div>
     )
 }

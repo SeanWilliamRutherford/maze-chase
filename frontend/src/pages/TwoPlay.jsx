@@ -9,9 +9,9 @@ import {logout, updateMyStats} from '../features/auth/authSlice'
 
 import {createMaze, mySearch, isPath} from '../functionality/maze';
 
-import io from 'socket.io-client';
+//import io from 'socket.io-client';
 
-const socket  = io()
+//const socket  = io()
 
 const TwoPlay = () => {
   
@@ -25,10 +25,10 @@ const TwoPlay = () => {
   const dispatch = useDispatch()
 
   ///////////////////////////////////////////////////////////////////
-  const [isConnected, setIsConnected] = useState(socket.connected);
-  const [lastPong, setLastPong] = useState(null);
+  /*const [isConnected, setIsConnected] = useState(socket.connected);
+  const [lastPong, setLastPong] = useState(null);*/
 
-  React.useEffect(() => {
+  /*React.useEffect(() => {
     socket.on('connect', () => {
       setIsConnected(true);
     });
@@ -50,7 +50,7 @@ const TwoPlay = () => {
 
   const sendPing = () => {
     socket.emit('ping', 'PING');
-  }
+  }*/
   //////////////////////////////////////////////////////////////////////
 
   React.useEffect(() => {
@@ -217,9 +217,9 @@ const TwoPlay = () => {
       </canvas>
 
       <div>
-        <p>Connected: { '' + isConnected }</p>
-        <p>Last pong: { lastPong || '-' }</p>
-        <button onClick={ sendPing }>Send ping</button>
+        <p>Connected: { '' + 'isConnected' }</p>
+        <p>Last pong: { 'lastPong' || '-' }</p>
+        <button>onClick=sendPing </button>
       </div>
 
       <button

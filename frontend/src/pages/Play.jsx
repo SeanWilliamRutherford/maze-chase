@@ -8,6 +8,7 @@ import { useNavigate, Link } from "react-router-dom";
 import {logout, updateMyStats} from '../features/auth/authSlice'
 
 import {createMaze, mySearch, isPath} from '../functionality/maze';
+import styles from '../stylesheets/Play.module.css';
 
 
 const Play = () => {
@@ -32,6 +33,7 @@ const Play = () => {
 
   React.useEffect(() => {
     console.log("YO",restart);
+    console.log(user);
     let c = document.getElementById("myCanvas");
     let ctx = c.getContext("2d");
     
@@ -76,7 +78,7 @@ const Play = () => {
     function handlePlayerMove(e) {
       console.log(e.keyCode);
       let goalNode = [19,9];
-      if(true/*isPath(maze[x][y], e.keyCode)*/){
+      if(isPath(maze[x][y], e.keyCode)){
         ctx.beginPath();
         ctx.clearRect(50*x + 1, 50*y + 1, 48, 48);    
         ctx.stroke();
@@ -132,9 +134,9 @@ const Play = () => {
         intervalId = setInterval(() => {
           ctx.beginPath();
           if(i != route.length-1){
-          ctx.clearRect(route[i].xPos*50,route[i].yPos*50,48,48);
+          ctx.clearRect(route[i].xPos*50+1,route[i].yPos*50+1,48,48);
           ctx.fillStyle = "yellow";
-          ctx.rect(route[i+1].xPos*50,route[i+1].yPos*50,48,48);
+          ctx.rect(route[i+1].xPos*50+1,route[i+1].yPos*50+1,48,48);
           ctx.fill();
           chaserX = route[i+1].xPos;
           chaserY = route[i+1].yPos;
@@ -163,31 +165,45 @@ const Play = () => {
 
 
   return (
-    <div>
-      <h1>Maze Runner</h1>
-      
-      <button
-        className="button button1"
-        onClick={startGame}>
-        Start  
-      </button>
-      
-      <h2>Score: {score}</h2>
-      <h3>Hi-Score: {user.stats.hiscore}</h3>
+    <div className={styles.page}>
 
-      <canvas
-        id="myCanvas"
-        width="1000"
-        height="500"
-        style={{ border: "1px solid #d3d3d3" }}
-        //onKeyDown={handleKeyDown}
-      >
-      </canvas>
+      <div className={styles.head}>
 
-      <button
-        onClick={logOut}>
-        Logout
-      </button>
+        <h1>Maze Chase</h1>
+
+        
+
+      </div>
+
+      <div className={styles.body}>
+        <div className={styles.info}>
+            <button
+              className={styles.button}
+              onClick={startGame}>
+              Start  
+            </button>
+            <h2>{user.name}</h2>
+            <h3>Score: {score}</h3>
+            <h4>Hi-Score: {user.stats.hiscore}</h4>
+            <button className={styles.button}
+              onClick={logOut}>
+              Logout
+            </button>
+        </div>
+        
+        <div className={styles.canvascontainer}>
+        <canvas className={styles.canvas}
+          id="myCanvas"
+          width="1000"
+          height="500"
+          style={{ border: "1px solid #d3d3d3" }}
+          //onKeyDown={handleKeyDown}
+        >
+        </canvas>
+        </div>
+      </div>  
+
+      
     </div>
   );
 }

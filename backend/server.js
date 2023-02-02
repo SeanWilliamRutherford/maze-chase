@@ -11,9 +11,9 @@ connectDB()
 
 const app = express();
 const http = require('http');
-const server = http.createServer(app);
+/*const server = http.createServer(app);
 const { Server } = require("socket.io");
-const io = new Server(server);
+const io = new Server(server);*/
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -26,18 +26,18 @@ if(process.env.NODE_ENV == 'production'){
     app.get('*', (req,res) => res.sendFile(path.resolve(__dirname, '../','frontend','build','index.html')))
 }
 
-io.on('connection', (socket) => {
+/*io.on('connection', (socket) => {
     console.log(`a user connected from socket: ${socket.id}`);
     socket.on('ping', (msg) => {
         console.log('ping: ' + msg);
         socket.emit('pong')
     });
-});
+});*/
 
 
-server.listen(3000, () => {
+/*server.listen(3000, () => {
     console.log('listening on *:3000');
-});
+});*/
 
 app.use(errorHandler)
 
