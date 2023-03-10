@@ -65,7 +65,8 @@ function Register() {
         return (
             <>
               <div className={styles.page}>
-
+                <h1>Maze Chase</h1>
+                
                 <div className={styles.loginform}>
                   <section className={styles.title}>
                     <h1>

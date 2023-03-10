@@ -63,7 +63,7 @@ function Login() {
     return (
         <>
         <div className={styles.page}>
-          
+          <h1>Maze Chase</h1>
     
           <div className={styles.loginform}>
             <div className={styles.title}>
